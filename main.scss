@@ -1,1 +1,91 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
 
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.people {
+  padding: 30px 35px;
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  gap: 40px 30px;
+
+  place-content: center;
+
+  @media (min-width: 1000px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+
+  &__person {
+    position: relative;
+    z-index: 0;
+  }
+
+  &__photo {
+    display: flex;
+    position: relative;
+
+    height: 200px;
+    margin-bottom: 8px;
+  }
+
+  &__img {
+    display: block;
+    border-radius: 50%;
+  }
+  &__rank {
+    position: absolute;
+    top: 84px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 16px;
+
+    color: #8b0000;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__name {
+      font-weight: 700;
+      font-size: 20px;
+
+      color: #2f4f4f;
+    }
+
+    &__extra {
+      display: none;
+      position: absolute;
+      font-weight: 400;
+      font-size: 21px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+
+      color: #000;
+    }
+
+    &__name {
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+  &__person:hover {
+    background-color: #eee;
+    border-radius: 10px;
+  }
+  &__img:hover {
+    border-radius: 60px;
+  }
+}
